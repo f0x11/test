@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <title>话题内容</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="/static/css/shitouren.css">
+    <script type="text/javascript" src="http://www.shitouren.com/homepage/js/jquery.min.js"></script>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        html, body{
+            margin: 0;
+            padding: 0;
+            box-sizing: content-box;
+        }
+        body{
+            font-size: 16px;
+            font-family: Helvetica, STHeiti, Droid Sans Fallback, sans-serif;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        .note-page{
+            padding: 20px;
+        }
+
+        .tn-contaner{
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 12px 10px;
+            position: relative;
+        }
+        .tn-channel{
+            position: absolute;
+            font-size: 10px;
+            color: rgb(121,121,121);
+            left: 10px;
+            top: 8px;
+        }
+        .tn-title{
+            color: rgb(93, 73, 62);
+            text-align: center;
+            padding: 2px 0;
+        }
+        .tn-desc{
+            color: rgb(177,148,118);
+            padding: 16px 0;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        .tn-ops{
+            position: relative;
+        }
+        .tn-tags{
+            color: rgb(148,203,93);
+            display: inline-block;
+        }
+        .tn-tag{
+            border: 1px solid rgb(148, 203, 93);
+            border-radius: 5px;
+            display: inline-block;
+            padding: 0 4px;
+            font-size: 12px;
+        }
+        .tn-hot{
+            color: rgb(229, 189, 125);
+            font-size: 16px;
+        }
+        .tn-post-btn{
+            display: inline-block;
+            color: #ffffff;
+            background-color: rgb(147, 205, 85);
+            font-size: 13px;
+            padding: 2px 8px;
+            border-radius: 6px;
+            position: relative;
+        }
+        .tn-post-btn .icon{
+            position: relative;
+            top: 1px;
+        }
+
+        .tn-post-btn .text{
+            font-size: 14px;
+            vertical-align: top;
+            padding-top: 1px;
+            display: inline-block;
+        }
+
+        .tn-tag-right{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            font-size: 14px;
+            color: rgb(229, 189, 125);
+        }
+
+        .note{
+            margin-top: 20px;
+        }
+
+        .note-header{
+            position: relative;
+            margin: 0 0 10px;
+        }
+        .nt-au-img{
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            overflow: hidden;
+            width: 36px;
+            height: 36px;
+        }
+        .nt-au-img img{
+            width: 100%;
+            height: 100%;
+        }
+        .nt-au-info{
+            margin-left: 40px;
+            margin-right: 60px;
+            padding-top: 4px;
+        }
+        .nt-au-name{
+            color: rgb(102,102,102);
+            font-size: 16px;
+        }
+        .nt-au-island{
+            color: rgb(229, 189, 125);
+            font-size: 12px;
+        }
+
+        .nt-pull-right{
+            text-align: right;
+            position: absolute;
+            right: 0;
+            top: 2px;
+        }
+
+        .nt-like{
+            display: inline-block;
+            background-color: rgb(148, 203, 93);
+            padding: 3px 6px 2px;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 10px;
+            vertical-align: top;
+        }
+
+        .nt-limg-container{
+            width: 100%;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .nt-limg{
+            width: 100%;
+            overflow: hidden;
+            padding-bottom: 35.4838%;
+            height: 0;
+            border-radius: 5px;
+        }
+        .nt-limg img{
+            width: 100%;
+        }
+        .nt-simgs-container{
+            position: relative;
+            white-space: nowrap;
+            overflow: scroll;
+            width: 100%;
+        }
+        .nt-simgs img{
+            height: 40px;
+            width: 40px;
+            border-radius: 2px;
+        }
+        .nt-comp{
+        }
+        .nt-comp-b{
+            border: 1px solid rgb(229,189,125);
+            height: 12px;
+            border-radius: 10px;
+            width: 50px;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .nt-comp-l{
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 80%;
+            background-color: rgb(229,189,125);
+            height: 10px;
+        }
+        .nt-comp-num{
+            display: inline-block;
+            font-size: 12px;
+            color: rgb(229,189,125);
+        }
+        .nt-content{
+            color: rgb(89,75,64);
+            white-space: pre-wrap;
+            font-size: 14px;
+            line-height: 20px;
+            margin-top: 16px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+
+    <script type="text/javascript" src="http://www.shitouren.com/homepage/js/jquery.min.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+<div class="note-page">
+    <div class="page-body">
+        <div class="tn-contaner">
+            <div class="tn-channel">公共频道</div>
+            <div class="tn-title">#邂逅最美下午茶#</div>
+            <div class="tn-desc">在英国，当时钟敲响四下，世界为茶而停。
+                品尝一份下午茶，享受一下午的悠闲时光，快来分享你的下午茶瞬间。</div>
+            <div class="tn-ops">
+                <div class="">
+                    <span class="tn-hot">249</span>
+                    <div class="tn-post-btn">
+                        <span class="icon icon-edit"></span>
+                        <span class="text">发表</span>
+                    </div>
+                </div>
+                <div class="tn-tag-right">
+                    <span class="icon icon-star-empty"></span> 收藏
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="note">
+                <div class="note-header">
+                    <div class="nt-au-img"><img src="http://img4.imgtn.bdimg.com/it/u=4260226497,1586299901&fm=21&gp=0.jpg"></div>
+                    <div class="nt-au-info">
+                        <div class="nt-au-name">岚妹子</div>
+                        <div class="nt-au-island">石头人的小岛</div>
+                    </div>
+                    <div class="nt-pull-right">
+                        <div class="nt-like">
+                            <span class="icon icon-hot-empty"></span> 76
+                        </div>
+                        <div class="nt-comp">
+                            <div class="nt-comp-b">
+                                <div class="nt-comp-l"></div>
+                            </div>
+                            <div class="nt-comp-num">80%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nt-imgs">
+                    <div class="nt-limg-container">
+                        <div class="nt-limg">
+                            <img src="http://www.cghlj.com/uploads/allimg/131124/1-131124091522.jpg">
+                            <img src="http://img2.duitang.com/uploads/item/201201/06/20120106160117_yZceC.jpg">
+                            <img src="http://pic41.nipic.com/20140516/11435189_164350184125_2.jpg">
+                            <img src="http://img1.imgtn.bdimg.com/it/u=3480985383,553333738&fm=21&gp=0.jpg">
+                            <img src="http://img2.imgtn.bdimg.com/it/u=2332348080,2650842468&fm=21&gp=0.jpg">
+                        </div>
+                    </div>
+                    <div class="nt-simgs-container">
+                        <div class="nt-simgs">
+                            <img style="border: 1px solid rgb(148,203,93);" src="http://img2.imgtn.bdimg.com/it/u=1895328705,3684784743&fm=21&gp=0.jpg">
+                            <img src="http://file.fwjia.com:88/d/file/2013-08-05/2412fbe21dc666a2e33ccd15158e9fbc.jpg">
+                            <img src="http://img1.imgtn.bdimg.com/it/u=955637052,453352375&fm=21&gp=0.jpg">
+                            <img src="http://file.fwjia.com:88/d/file/2013-08-05/2412fbe21dc666a2e33ccd15158e9fbc.jpg">
+                            <img src="http://file.fwjia.com:88/d/file/2013-08-05/2412fbe21dc666a2e33ccd15158e9fbc.jpg">
+                            <img src="http://file.fwjia.com:88/d/file/2013-08-05/2412fbe21dc666a2e33ccd15158e9fbc.jpg">
+                            <img src="http://file.fwjia.com:88/d/file/2013-08-05/2412fbe21dc666a2e33ccd15158e9fbc.jpg">
+                            <img src="http://file.fwjia.com:88/d/file/2013-08-05/2412fbe21dc666a2e33ccd15158e9fbc.jpg">
+                            <img src="http://file.fwjia.com:88/d/file/2013-08-05/2412fbe21dc666a2e33ccd15158e9fbc.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="nt-content">1、前门M
+在前门M的下午茶一定要选在凉台用，抬眼就能看到前三门，紫禁城尽收眼下的大气景致还有哪儿能比得上吗？</div>
+                <div class="tn-tags">
+                    <div class="tn-tag">消磨时光</div>
+                    <div class="tn-tag">甜点</div>
+                    <div class="tn-tag">休闲</div>
+                    <div class="tn-tag">恬静午后</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

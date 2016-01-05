@@ -1,0 +1,723 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=640">
+    <meta name="apple-itunes-app" content="app-id=425349261"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>网易图片</title>
+    <link rel="apple-touch-icon-precomposed"
+          href="http://img1.cache.netease.com/3g/img11/3gtouch/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="http://img1.cache.netease.com/3g/img11/3gtouch/apple-touch-icon-114x114-precomposed.png">
+    <script>
+        /* Fix viewport*/
+        (function (f, u) {
+            var o = navigator.userAgent, r = 640, e = f.innerWidth || r, g = f.outerHeight || e, q = f.screen.width || e, d = f.screen.availWidth || e, n = f.innerHeight || r, p = f.outerHeight || n, a = f.screen.height || n, k = f.screen.availHeight || n, l = Math.min(e, g, q, d, n, p, a, k), h = l / r, b = f.devicePixelRatio;
+            h = Math.min(h, b);
+            if (h < 1) {
+                var t = ",initial-scale=" + h + ",maximum-scale=" + h, c = u.getElementsByTagName("meta"), j;
+                if (/iphone|ipod/ig.test(o)) {
+                    j = ",user-scalable=no"
+                }
+                if (/android/ig.test(o)) {
+                    j = ""
+                }
+                t += j;
+                for (var s = 0, m; s < c.length; s++) {
+                    m = c[s];
+                    if (m.name == "viewport") {
+                        m.content += t
+                    }
+                }
+            }
+        }).call(this, window, document);
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            -webkit-user-select: text;
+        }
+
+        a, img {
+            -webkit-touch-callout: none;
+            /*禁用长按弹出系统菜单*/
+        }
+
+        *, :after, :before {
+            -webkit-box-sizing: border-box;
+            /*高宽不算padding,margin*/
+            -webkit-text-size-adjust: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body, html {
+            text-align: left;
+            height: 100%;
+            /*高度必须为100%*/
+            width: 100%;
+            font-family: Roboto, HelveticaNeue, Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        body {
+            width: 640px;
+            line-height: 1;
+            color: #1e1e1e;
+            cursor: pointer;
+            background-color: #f6f6f6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            vertical-align: top;
+        }
+
+        .main-body {
+            padding: 45px 20px 30px;
+            min-height: 400px;
+        }
+
+        .title {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            color: #808080;
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .main-body .time {
+            margin-right: 10px;
+        }
+
+        .main-body p {
+            font-size: 28px;
+            line-height: 50px;
+            color: #343434;
+        }
+
+        .main-body img {
+            margin-bottom: 10px;
+        }
+
+        .main-body .text {
+            margin-bottom: 10px;
+        }
+
+        .main-body .load-more {
+            display: block;
+            width: 150px;
+            margin: 0 auto;
+            padding: 9px 24px;
+            border: 1px solid #4682c5;
+            color: #4682c5;
+            font-size: 24px;
+            border-radius: 33px;
+        }
+
+        .tie-area {
+            padding-bottom: 20px;
+        }
+
+        .tie-title {
+            padding: 18px 40px;
+            color: #1e1e1e;
+            font-size: 28px;
+            border-top: 1px solid #d9d9d9;
+            border-bottom: 1px solid #d9d9d9;
+            background-color: #e7e7e7;
+        }
+
+        .tie-list {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        .tie-list > div {
+            padding: 8px 0 14px;
+            color: #000;
+            overflow: hidden;
+            border-bottom: 1px solid #E7E7E7;
+            margin: 0 34px;
+        }
+
+        .tie-list > div:last-child {
+            border: none
+        }
+
+        .tie-list span {
+            line-height: 52px;
+            font-size: 24px;
+            color: #919191;
+        }
+
+        .tie-list .author97 {
+            color: #5291d2;
+            font-size: 28px;
+        }
+
+        .tie-list .author61 {
+            color: #5291d2;
+            font-size: 28px;
+        }
+
+        .tie-list p {
+            font-size: 30px;
+            line-height: 54px;
+        }
+
+        .tie-list .tie-author {
+            margin-top: 8px;
+            margin-bottom: 19px;
+        }
+
+        .tie-list > div div p {
+            margin: 0 6px 0 9px;
+        }
+
+        .tie-list div div + p {
+            margin-top: 10px;
+        }
+
+        .tie-list > div div {
+            background: #f9f9e9;
+            border-top: 1px solid #c8c89b;
+            border-bottom: 1px solid #c8c89b;
+            padding: 0 0 6px;
+        }
+
+        .tie-list > div > div, .tie-list > div > div > div, .tie-list > div > div > div > div, .tie-list > div > div > div > div > div {
+            padding: 5px;
+            border-left: 1px solid #c8c89b;
+            border-right: 1px solid #c8c89b;
+        }
+
+        .tie-list > div > div > div > div > div > div {
+            border-left: 1px solid #c8c89b;
+            border-right: 1px solid #c8c89b;
+            padding: 6px;
+        }
+
+        .tie-list > div > div > div > div > div > div div {
+            border-top: none;
+        }
+
+        .tie-list .nopost {
+            text-align: center;
+            font-size: 18px;
+            color: #a6a6a6;
+            margin: 6px 0;
+        }
+
+        .tie-list .nopost:first-child {
+            margin-top: 20px;
+        }
+
+        .tie-list .nopost:last-child {
+            margin-bottom: 20px;
+        }
+
+        .userHeadImage-contain {
+            float: left;
+            margin-right: 10px;
+            width: 52px;
+            height: 52px;
+            border: 1px solid #d9d9d9;
+            border-radius: 26px;
+            overflow: hidden;
+        }
+
+        .userHeadImage-contain img {
+            display: block;
+            margin: auto;
+            margin-top: 2px;
+        }
+
+        .ding {
+            margin-top: 3px;
+        }
+
+        .author61 {
+            width: 61%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .author97 {
+            width: 97%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .fl-l {
+            float: left;
+        }
+
+        .fl-r {
+            float: right;
+        }
+
+        .clearfix:after {
+            clear: both;
+            height: 0;
+            overflow: hidden;
+            display: block;
+            visibility: hidden;
+            content: ".";
+        }
+
+        .open-app {
+            display: block;
+            padding: 27px 0;
+            margin: 20px 34px 0;
+            text-align: center;
+            border-radius: 3px;
+            background-color: #e7282d;
+        }
+
+        .footer-wrap {
+            height: 110px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+            -webkit-transition: -webkit-transform 0.2s ease-in-out;
+            transition: -webkit-transform 0.2s ease-in-out;
+        }
+
+        .footer.active {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .footer .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+            width: 52px;
+            height: 52px;
+        }
+
+        #photoset {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            overflow: hidden;
+            visibility: hidden;
+            opacity: 0;
+            background: #1C1D1E;
+            -webkit-transition: opacity .2s ease-in-out;
+            transition: opacity .2s ease-in-out;
+        }
+
+        #photoset.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        #photoset ul {
+            height: 100%;
+        }
+
+        #photoset li {
+            float: left;
+            display: table;
+            height: 100%;
+            width: 640px;
+        }
+
+        #photoset .img-wrap {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+    </style>
+</head>
+<body ontouchstart="">
+<article class="main-body" id="mainBody">
+    <div class="article-content">
+    </div>
+    <div><a class="load-more" data-page="1">加载更多</a></div>
+</article>
+<article class="tie-area" id="tieArea">
+    <div class="tie-title">热门跟贴</div>
+    <div class="tie-list">
+    </div>
+    <a class="open-app"><img class="open-i" height="33"
+                             src="http://img2.cache.netease.com/m/newsapp/banner/openBannerTxt.png"></a>
+</article>
+<div class="footer-wrap">
+</div>
+<div class="footer" id="footer">
+    <span class="close"></span>
+    <a><img/></a>
+</div>
+<div id="photoset" data-loaded="0">
+    <ul></ul>
+</div>
+<script src="http://img1.cache.netease.com/utf8/3g/libs/iscroll5.js"></script>
+<script>
+    function getParam(a) {
+        var b = (function () {
+            var f = window.location.href, k = f.indexOf("?") + 1, e = {};
+            if (k !== 0) {
+                var j = f.substring(k);
+                var h = j.split("&");
+                var c = [], g = 0;
+                for (; g < h.length; g++) {
+                    c = h[g].split("=");
+                    if (g === h.length - 1) {
+                        var d = c[1].indexOf("#");
+                        if (d !== -1) {
+                            c[1] = c[1].substring(0, d)
+                        }
+                    }
+                    e[c[0]] = c[1]
+                }
+            }
+            return e
+        })();
+        return b[a]
+    }
+    ;
+    ;
+    (function () {
+        var setid = getParam('setid')
+        var channelid = getParam('channelid') || '0096'
+        var docid, boardid
+        var number = 10
+        var tpl = {
+            content: '<div class="title"><#=setname#></div><div class="subtitle"><span><#=source#></span><span class="time"><#=time#></span><span><span class="js-tiecount"></span>跟贴</span></div><div><#=content#></div>',
+            photos: '<p><img class="img" data-index="<#=index#>" src="<#=src#>"/></p><p class="text"><#=imgtitle#></p><p class="text"><#=imgnote#></p>',
+            photoset: '<li><div class="img-wrap"><img data-src="<#=src#>"></div></li>',
+            post: '<div class="tie-item" id="<#=postid#>" count="<#=count#>"><p class="tie-author clearfix"><span class="userHeadImage-contain"><img src="<#=headImg#>" alt="user-head-image" /></span><span class="fl-l author61"><#=author#></span><span class="fl-r"><#=vote#> <img class="ding" src="http://img2.cache.netease.com/m/newsapp/banner/ding.png" alt="ding" /></span></p><#=floors#><p><#=content#></p></div>',
+            fullFloor: '<p class="clearfix"><span class="fl-l author61"><#=author#></span><span class="fl-r"><#=vote#> 顶</span></p><#=floors#><p><#=content#></p>',
+            fold: '<div><#=floors#><p class="foldLink">点击展开隐藏楼层</p></div>',
+            oriPost: '<div><#=floors#><p class="clearfix"><span class="fl-l author97"><#=author#></span><span class="fl-r"><#=floorNo#></span></p><p><#=content#></p></div>'
+        }
+        var photosData = ''
+        setTimeout(function () {
+            document.getElementById('footer').classList.add('active')
+        }, 3000)
+        document.querySelector('#footer .close').addEventListener('click', function (e) {
+            document.getElementById('footer').classList.remove('active')
+            document.querySelector('.footer-wrap').style.display = 'none'
+        }, false)
+        window.photosetinfo = function (data) {
+            if (!data)return
+            docid = data.postid
+            board = data.boardid
+            photosData = data.photos
+                //微信朋友圈
+            ;
+            (function () {
+                var url, w, summary, title, imgurl, _ref;
+                url = window.location.origin + location.pathname + '?setid=' + setid;
+                if (channelid) {
+                    url = url + '&channelid=' + channelid
+                }
+                url += '&modelid=3gphotoshare&s=newsapp';
+                w = +getParam('w');
+                if (w) {
+                    w++;
+                    url += '&w=' + w;
+                } else {
+                    url += '&w=1';
+                }
+                imgurl = data.cover || "http://img1.cache.netease.com/travel/2014/7/22/20140722172931b2127.png"
+                title = '网易图集：' + data.setname || ''
+                desc = data.desc || ''
+                document.addEventListener('WeixinJSBridgeReady', function () {
+                    // 分享到朋友圈;
+                    WeixinJSBridge.on('menu:share:timeline', function (argv) {
+
+                        WeixinJSBridge.invoke('shareTimeline', {
+                            "img_url": imgurl,
+                            "img_width": "150",
+                            "img_height": "150",
+                            "link": url + '&f=wx',
+                            "desc": desc,
+                            "title": title
+                        }, function () {
+                            var spss = getParam('s') || 'newsapp'
+                            var spsw = getParam('w') || 1
+                            neteaseTracker && neteaseTracker(false, 'http://sps.163.com/func/?func=sharedone&spst=0&setid=' + setid + '&spsw=' + spsw + '&spss=' + spss + '&spsf=wx', '', 'sps')
+                        });
+                    });
+                    WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+                        WeixinJSBridge.invoke('sendAppMessage', {
+                            "img_url": imgurl,
+                            "link": url + '&f=wx',
+                            "desc": data.photos[0].note || data.photos[0].imgtitle,
+                            "title": title
+                        }, function () {
+                            var spss = getParam('s') || 'newsapp'
+                            var spsw = getParam('w') || 1
+                            neteaseTracker && neteaseTracker(false, 'http://sps.163.com/func/?func=sharedone&spst=0&setid=' + setid + '&spsw=' + spsw + '&spss=' + spss + '&spsf=wx', '', 'sps')
+                        });
+                    });
+                });
+
+            })()
+            var photoScroll = null
+            document.addEventListener('click', function (e) {
+                var wrap = document.getElementById('photoset')
+                if (wrap.classList.contains('show')) {
+                    wrap.classList.remove('show')
+                    document.body.removeEventListener('touchstart', preventDefault, false);
+                } else {
+                    if (!e.target.classList.contains('img')) {
+                        return
+                    }
+                    wrap.classList.add('show')
+                    document.body.addEventListener('touchstart', preventDefault, false);
+                    var imgIndex = +e.target.dataset.index || 0
+                    if (wrap.dataset.loaded == 0) {
+                        //加载并显示图集
+                        wrap.dataset.loaded = 1
+                        var html = ''
+                        photosData.forEach(function (item, i) {
+                            html += simpleParse(tpl.photoset, {src: item.imgurl})
+                        })
+                        wrap.querySelector('ul').innerHTML = html
+                        wrap.querySelector('ul').style.width = 640 * photosData.length + 'px'
+
+                        photoScroll = new IScroll('#photoset', {
+                            scrollX: true,
+                            scrollY: false,
+                            momentum: false,
+                            snap: 'li',
+                            snapSpeed: 600,
+                            snapThreshold: 0.08,
+                            click: true,
+                            preventDefault: false
+                        })
+                        photoScroll.on('scrollEnd', function (e) {
+                            var cp = photoScroll.currentPage.pageX;
+                            var imgs = wrap.querySelectorAll('img');
+                            if (imgs[cp] && !imgs[cp].src) {
+                                imgs[cp].src = imgs[cp].dataset.src;
+                            }
+                            if (imgs[cp + 1] && !imgs[cp + 1].src) {
+                                imgs[cp + 1].src = imgs[cp + 1].dataset.src;
+                            }
+                            if (imgs[cp - 1] && !imgs[cp - 1].src) {
+                                imgs[cp - 1].src = imgs[cp - 1].dataset.src;
+                            }
+                        })
+                    }
+                    photoScroll.goToPage(imgIndex, 0, 0)
+                    var imgs = wrap.querySelectorAll('img')
+                    imgs[imgIndex].src = imgs[imgIndex].dataset.src
+                    imgs[imgIndex - 1].src = imgs[imgIndex - 1].dataset.src
+                    imgs[imgIndex + 1].src = imgs[imgIndex + 1].dataset.src
+                }
+            }, false)
+            window.photosetinfo = null
+            // 某些图集不存在跟帖
+            if (docid && board) {
+                // 获取跟帖数
+                importJs('http://comment.api.163.com/api/jsonp/thread/total/' + board + '/' + docid + '?jsoncallback=getPosts')
+                // 获取跟帖
+                importJs('http://comment.api.163.com/api/jsonp/post/list/hot/' + board + '/' + docid + '/0/10/7/3/1/hotList')
+            } else {
+                document.querySelector('#tieArea .tie-title').style.display = 'none'
+            }
+            var photosHtml = getHtml(photosData, 0, number)
+            var loadMore = document.querySelector('.load-more')
+            photosHtml = simpleParse(tpl.content, {
+                setname: data.setname,
+                source: data.source,
+                time: data.datatime,
+                content: photosHtml
+            })
+            document.querySelector('.article-content').innerHTML = photosHtml
+            if (photosData.length <= number) {
+                loadMore.style.display = 'none'
+            }
+            loadMore.addEventListener('click', function (e) {
+                e.preventDefault()
+                var page = +loadMore.dataset.page
+                if (page * number < photosData.length) {
+                    var html = getHtml(photosData, page * number, number)
+                    loadMore.insertAdjacentHTML('beforebegin', html)
+                    loadMore.dataset.page = page + 1
+                }
+                if ((page + 1) * number >= photosData.length) {
+                    loadMore.style.display = 'none'
+                }
+            }, false)
+        }
+        window.getPosts = function (data) {
+            window.getPosts = null
+            document.querySelector('.js-tiecount').textContent = data.prcount
+        }
+        window.hotList = function (data) {
+            window.hotList = null
+            var holder = document.querySelector('.tie-list')
+            var posts = data['hotPosts'], str = tmp = '', p, cp, i;
+            if (!posts || posts.length === 0) {
+                holder.innerHTML = '<p class="nopost">跟贴是一种信仰，</p><p class="nopost">态度就在你身上。</p>';
+            } else {
+                for (i = 0; i < 3; i++) {
+                    p = posts[i]
+                    if (p == undefined) {
+                        continue
+                    }
+                    if (p.NON) {
+                        cp = p[p.NON]
+                        tmp = buildFloors(p, 3, 0)
+                    } else {
+                        var l = Object.keys(p).length
+                        cp = p[l]
+                        tmp = buildFloors(p, l - 1)
+                    }
+                    str += simpleParse(tpl.post, {
+                        floors: tmp,
+                        author: cp.f,
+                        vote: cp.v,
+                        content: cp.b,
+                        postid: cp.pi ||
+                        docid + '_' + cp.p,
+                        count: cp.v,
+                        headImg: cp.timg ? cp.timg : 'http://img2.cache.netease.com/m/newsapp/banner/userHeadImage.png'
+                    })
+                }
+                holder.innerHTML = str;
+            }
+        }
+        importJs('http://c.3g.163.com/photo/api/jsonp/set/' + channelid + '/' + setid + '.json')
+
+        var aist = +getParam('isappinstalled') || +getParam('appinstall')
+        // 一共有三个条件分支，是否是微信，是否安装，是否是iOS
+        // 已安装显示对应的banner和文字
+        if (aist == 1) {
+            document.querySelector('#footer img').src = "http://img1.cache.netease.com/3g/2014/back/open.png";
+        } else {
+            document.querySelector('#footer img').src = "http://img1.cache.netease.com/3g/2014/back/down.png";
+        }
+        var ua = navigator.userAgent,
+                isAndroid = ua.match(/android/ig),
+                isIos = ua.match(/iphone|ipod/ig),
+                isIpad = ua.match(/ipad/ig),
+                weixin = ua.match(/MicroMessenger/ig),
+                aurl = 'http://www.163.com/newsapp';
+        if (!weixin) {
+            if (isAndroid) {
+                aurl = 'http://3g.163.com/links/4304';
+            }
+            if (isIos || isIpad) {
+                aurl = 'itms-apps://itunes.apple.com/cn/app/id425349261?mt=8';
+            }
+            if (aist == '1') {
+                aurl = 'newsapp://photo/' + channelid + '/' + setid;
+            }
+        } else {
+            aurl = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.netease.newsreader.activity&g_f=991810';
+            if (aist == '1') {
+                aurl = 'http://3g.163.com/ntes/special/00340D52/weixinfallback.html?isappinstalled=1&openurl=newsapp://photo/' + channelid + '/' + setid;
+            }
+        }
+        document.querySelector('#footer a').href = aurl
+        document.querySelector('.open-app').href = aurl
+        function preventDefault(e) {
+            e.preventDefault()
+        }
+
+        function getHtml(data, start, length) {
+            var html = ''
+            data.forEach(function (item, i) {
+                if (i >= start && i < start + length) {
+                    html += simpleParse(tpl.photos, {
+                        src: item.imgurl,
+                        imgtitle: item.imgtitle,
+                        imgnote: item.note,
+                        index: i
+                    })
+                }
+            })
+            return html
+        }
+
+        function buildFloors(p, tf, bf) {
+            if (tf === 0)return '';
+            var cp, i, tmp = tpl.oriPost;
+            if (bf) {
+                for (i = 1; i <= bf; i++) {
+                    cp = p[Number(p.NON) - i];
+                    tmp = simpleParse(tmp, {
+                        floors: tpl.oriPost,
+                        author: cp.f,
+                        floorNo: Number(p.NON) - i,
+                        content: cp.b
+                    });
+                }
+                tmp = simpleParse(tmp, {floors: tpl.fold});
+            }
+            else if (bf === 0) {
+                tmp = simpleParse(tpl.fold, {floors: tmp});
+            }
+            for (i = tf; i >= 1; i--) {
+                cp = p[i];
+                tmp = simpleParse(tmp, {floors: i === 1 ? '' : tpl.oriPost, author: cp.f, floorNo: i, content: cp.b});
+            }
+            return tmp;
+        }
+
+        function simpleParse(a, b) {
+            return b ? String(a).replace(/<#=(\w+)#>/g, function (a, c) {
+                return null != b[c] ? b[c] : a
+            }) : a
+        };
+        function importJs(a, b, c) {
+            var d = document.createElement("script");
+            d.src = a, c && (d.charset = c), d.onload = function () {
+                this.onload = this.onerror = null, this.parentNode.removeChild(this), b && b(!0)
+            }, d.onerror = function () {
+                this.onload = this.onerror = null, this.parentNode.removeChild(this), b && b(!1)
+            }, document.head.appendChild(d)
+        }
+    }).call(this)
+</script>
+<!-- 统计代码 -->
+<!-- START NetEase Devilfish 2006 -->
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script type="text/javascript">
+    _ntes_nacc = "wap";
+    neteaseTracker();
+</script>
+<!-- END NetEase Devilfish 2006 -->
+<script>
+    (function () {
+        var setid, spsw, spss, spsf;
+        spsf = getParam('f')
+        if (!spsf) {
+            return
+        }
+        setid = getParam('setid')
+        spsw = getParam('w') || 1
+        neteaseTracker(false, 'http://sps.163.com/article/?spst=3&spss=newsapp&setid=' + setid + '&spsw=' + spsw + '&spsf=' + spsf, '', 'sps')
+    })()
+</script>
+</body>
+</html>

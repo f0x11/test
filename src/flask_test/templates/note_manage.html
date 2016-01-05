@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>管理</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="http://www.shitouren.com/homepage/js/jquery.min.js"></script>
+</head>
+<body>
+<div>
+    <h2>内容Note</h2>
+    <div>
+        <ul>
+            {% for note in note_list %}
+            <li>
+                <div>{{ note.name }}</div>
+                <div>{{ note.province_id }}</div>
+                <div>{{ note.city_id }}</div>
+                <div>{{ note.time }}</div>
+                <div>{{ note.topic_id }}</div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div>
+
+</div>
+</body>
+</html>

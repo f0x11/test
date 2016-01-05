@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <title>毕业不分手，幸好我带他去了【大理】</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        html, body{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 15px;
+            font-family: 'Helvetica Neue', 'Microsoft Yahei', sans-serif;
+        }
+
+        @media (min-width: 325px) {
+            body{
+                font-size: 17px;
+            }
+        }
+
+        @media (min-width: 375px) {
+            body{
+                font-size: 18px;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            body{
+                font-size: 24px;
+            }
+        }
+
+        img{
+            width: 100%;
+        }
+
+        .more-info {
+            text-align: center;
+            color: #AAAAAA;
+        }
+        .img-container{
+            position: relative;
+        }
+        .img-desc{
+            bottom: 0.6em;
+            background-color: #fff;
+            text-align: center;
+            color: #FF4136;
+            padding-bottom: 6px;
+        }
+        .share-tips img{
+            width: 10%;
+            position: absolute;
+            right: 6%;
+            top: 2%;
+        }
+        .share-tips span{
+            position: absolute;
+            right: 8%;
+            top: 6%;
+            font-size: 12px;
+            color: #aaaaaa;
+        }
+    </style>
+    <script type="text/javascript" src="http://www.shitouren.com/homepage/js/jquery.min.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        $(function() {
+        });
+    </script>
+</head>
+<body>
+<div class="img-container">
+    <img src="/static/results/{{ city_id }}/{{ mood }}.jpg">
+    <div class="img-desc"><a href="">测测你和TA适合去哪儿</a></div>
+    <div class="share-tips">
+        <img src="/static/arrow.png">
+        <span>点此分享</span>
+    </div>
+</div>
+<div class="more-info">
+    长按图片送10张免费手绘地图
+</div>
+<div>
+    <img src="/static/erweima.png">
+</div>
+</body>
+</html>

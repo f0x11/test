@@ -1,0 +1,447 @@
+@charset "utf-8";
+
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+body{
+    font-size: 16px;
+    font-family: Helvetica, STHeiti, Droid Sans Fallback, sans-serif;
+    background-color: rgb(241, 241, 241);
+    min-height: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.page{
+    text-align: center;
+}
+
+.btn{
+    outline: none;
+    border: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+.icon {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(/static/images/icons.png);}
+
+.icon-add {width:83px; height:82px; background-position: -2px -2px}
+.icon-checked {width:18px; height:18px; background-position: -108px -38px}
+.icon-star-empty {width:14px; height:14px; background-position: -103px -74px}
+.icon-star {width:14px; height:14px; background-position: -87px -64px}
+.icon-del {width:14px; height:14px; background-position: -108px -58px}
+.icon-edit {width:16px; height:14px; background-position: -109px -2px}
+.icon-head {width:71px; height:71px; background-position: -2px -86px}
+.icon-hot {width:12px; height:12px; background-position: -87px -80px}
+.icon-hot-empty {width:12px; height:12px; background-position: -101px -90px}
+.icon-pwd {width:19px; height:19px; background-position: -87px -43px}
+.icon-qq {width:15px; height:18px; background-position: -109px -18px}
+.icon-user {width:19px; height:20px; background-position: -87px -21px}
+.icon-wx {width:20px; height:17px; background-position: -87px -2px}
+
+.img-c, .input-c, .submit-c, .login-c{
+    margin-top: 40px;
+}
+
+.input-icon-group{
+    margin: 0 40px;
+    position: relative;
+}
+
+.input-icon-group .icon{
+    left: 0;
+    position: absolute;
+    top: 11px;
+}
+
+.input-icon-group input{
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgb(209, 194, 178);
+    box-shadow: none;
+    color: rgb(178, 148, 116);
+    font-size: 14px;
+    line-height: 28px;
+    outline: none;
+    padding-left: 26px;
+    padding-top: 8px;
+    width: 100%;
+}
+
+.submit-wrap{
+    margin: 0 40px;
+}
+
+.submit-wrap .submit{
+    background-color: rgb(147, 205, 86);
+    border: none;
+    border-radius: 12px;
+    box-shadow: none;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 6px;
+    outline: none;
+    padding: 8px 0;
+    text-indent: 6px;
+    width: 100%;
+}
+
+.submit-problem{
+    color: rgb(209,194,178);
+    font-size: 10px;
+    display: inline-block;
+    margin-top: 16px;
+    text-decoration: none;
+}
+
+.reg-c{
+    position: fixed;
+    bottom: 8px;
+    width: 100%;
+}
+
+.reg-tip{
+    color: rgb(209,194,178);
+    font-size: 10px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.reg-btn-c{
+    margin: 0 40px;
+}
+
+.reg-c .btn{
+    background-color: rgb(230, 190, 120);
+    border-radius: 8px;
+    color: #ffffff;
+    white-space: nowrap;
+    width: 48%;
+    font-size: 13px;
+    padding: 2px 4px;
+}
+
+.reg-c .btn.reg-wx{
+    margin-right: 2%;
+}
+
+.reg-c .btn.reg-qq{
+    margin-left: 2%;
+}
+
+.reg-c .icon{
+    vertical-align: bottom;
+}
+
+.input-c1{
+    margin: 40px 40px 0;
+}
+
+.input-c1 input{
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgb(209, 194, 178);
+    box-shadow: none;
+    color: rgb(185, 160, 130);
+    font-size: 14px;
+    line-height: 28px;
+    outline: none;
+    padding-top: 8px;
+    width: 100%;
+}
+
+.verify-input-group{
+     position: relative;
+  display: table;
+  border-collapse: separate;
+}
+
+.verify-input-group input{
+  vertical-align: middle;
+      border-radius: 0;
+      position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
+  display: table-cell;
+}
+
+.verify-input-group .input-group-btn{
+      position: relative;
+  font-size: 0;
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.verify-input-group .input-group-btn button{
+    background: rgb(230, 190, 120);
+    border-radius: 6px;
+    color: #ffffff;
+    margin-top: 12px;
+    padding: 4px 12px;
+}
+
+.submit-c1{
+    margin: 80px 40px 0;
+}
+
+.submit-c1 button{
+    background-color: rgb(147,205,85);
+    border-radius: 10px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 16px;
+    padding: 8px 0;
+    width: 100%;
+}
+
+.topic-page{
+    padding: 10px;
+}
+
+.hot-topics{
+    border: 1px solid rgb(148,203,93);
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.hot-topic{
+    width:100%;
+    overflow:hidden;
+    padding-bottom: 50%;
+    height: 0;
+    border-radius: 5px;
+}
+.hot-topic img {
+    width:100%;
+}
+
+.normal-topic{
+    padding: 18px 12px 0;
+    position: relative;
+}
+
+.topic-hot{
+    color: rgb(148,203,93);
+    font-size: 14px;
+    position: absolute;
+    left: 12px;
+    top: 19px;
+}
+
+.topic-body{
+    padding-left: 34px;
+}
+
+.topic-content{
+    color: rgb(179, 145, 115);
+    text-decoration: none;
+    font-size: 14px;
+}
+.topic-content:visited{
+    /*color: rgb(93, 73, 62);*/
+}
+.topic-title{
+    font-size: 12px;
+    color: rgb(110, 110, 110);
+    padding: 0;
+}
+
+/* note page */
+.note-page{
+    padding: 20px;
+}
+
+.tn-container{
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 12px 10px;
+    position: relative;
+}
+.tn-channel{
+    position: absolute;
+    font-size: 10px;
+    color: rgb(121,121,121);
+    left: 10px;
+    top: 8px;
+}
+.tn-title{
+    color: rgb(93, 73, 62);
+    text-align: center;
+    padding: 2px 0;
+}
+.tn-desc{
+    color: rgb(177,148,118);
+    padding: 16px 0;
+    font-size: 14px;
+    line-height: 20px;
+}
+.tn-ops{
+    position: relative;
+}
+.tn-tags{
+    color: rgb(148,203,93);
+    display: inline-block;
+}
+.tn-tag{
+    border: 1px solid rgb(148, 203, 93);
+    border-radius: 5px;
+    display: inline-block;
+    padding: 0 4px;
+    font-size: 12px;
+}
+.tn-hot{
+    color: rgb(229, 189, 125);
+    font-size: 16px;
+}
+.tn-post-btn{
+    display: inline-block;
+    color: #ffffff;
+    background-color: rgb(147, 205, 85);
+    font-size: 13px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    position: relative;
+}
+.tn-post-btn .icon{
+    position: relative;
+    top: 1px;
+}
+
+.tn-post-btn .text{
+    font-size: 14px;
+    vertical-align: top;
+    padding-top: 1px;
+    display: inline-block;
+}
+
+.tn-tag-right{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 14px;
+    color: rgb(229, 189, 125);
+}
+
+.note{
+    margin-top: 20px;
+}
+
+.note-header{
+    position: relative;
+    margin: 0 0 10px;
+}
+.nt-au-img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 36px;
+    height: 36px;
+}
+.nt-au-img img{
+    width: 100%;
+    height: 100%;
+}
+.nt-au-info{
+    margin-left: 40px;
+    margin-right: 60px;
+    padding-top: 4px;
+}
+.nt-au-name{
+    color: rgb(102,102,102);
+    font-size: 16px;
+}
+.nt-au-island{
+    color: rgb(229, 189, 125);
+    font-size: 12px;
+}
+
+.nt-pull-right{
+    text-align: right;
+    position: absolute;
+    right: 0;
+    top: 2px;
+}
+
+.nt-like{
+    display: inline-block;
+    background-color: rgb(148, 203, 93);
+    padding: 3px 6px 2px;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 10px;
+    vertical-align: top;
+}
+
+.nt-limg-container{
+    width: 100%;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.nt-limg{
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 35.4838%;
+    height: 0;
+    border-radius: 5px;
+}
+.nt-limg img{
+    width: 100%;
+}
+.nt-simgs-container{
+    position: relative;
+}
+.nt-simgs img{
+    border-radius: 2px;
+    height: 40px;
+    width: 40px;
+}
+.nt-simgs img.active{
+    border: 1px solid rgb(148,203,93);
+}
+.nt-comp{
+}
+.nt-comp-b{
+    border: 1px solid rgb(229,189,125);
+    height: 12px;
+    border-radius: 10px;
+    width: 50px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+.nt-comp-l{
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 80%;
+    background-color: rgb(229,189,125);
+    height: 10px;
+}
+.nt-comp-num{
+    display: inline-block;
+    font-size: 12px;
+    color: rgb(229,189,125);
+}
+.nt-content{
+    color: rgb(93, 74, 60);
+    white-space: pre-wrap;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 16px;
+    margin-bottom: 10px;
+}
